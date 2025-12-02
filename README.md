@@ -1,91 +1,95 @@
 TuneTrail
 
-TuneTrail is an educational Android app that teaches kids basic programming ideas through a simple maze game. Kids use drag-and-drop commands to move through the maze, collect items, and reach the goal. Parents can create accounts, view reports, and track their child’s progress.
+TuneTrail is an educational Android app that helps kids understand basic programming concepts through a maze-based puzzle system. Kids solve each maze by dragging movement commands into a program bar and running them step-by-step. Parents can register, log in, and view their child’s performance through a progress report that includes a chart.
 
-This project was created for CSC 371 – Individual Project 3.
+This project was developed for CSC 371 – Individual Project 3.
 
-Features
+⸻
 
-Accounts (SQLite)
-•	Parent and Kid registration
-•	Parent and Kid login
-•	Parent linked to kid accounts
-•	Session storage so the user stays logged in
+Main Features
 
-Game Levels
-•	4 levels
-•	Each level has 3 games
-•	Each game has its own maze layout
-•	Each maze includes:
-•	Walls
-•	Notes to collect
-•	A goal cell
-•	A move limit
+Account System (SQLite)
+
+• Parent and Kid registration
+• Login for both roles
+• Parents linked to their child’s progress
+• Session storage to keep users logged in
+
+⸻
+
+Game Structure
+
+Levels and Games
+
+• Four levels
+• Three games (mazes) per level
+• Each maze includes:
+• Walls
+• Notes to collect
+• A goal position
+• A move limit
 
 Commands
-•	The kid can drag and drop these commands:
-•	Step (move right)
-•	Left
-•	Up
-•	Down
-•	Commands run in order to solve the maze
 
-Animation and Audio
-•	Smooth animation while moving through the maze
-•	Sounds for:
-•	Moving
-•	Winning
-•	Failing
+• Step (right)
+• Left
+• Up
+• Down
+• Commands are drag-and-drop and run in sequence
 
-Drag and Drop
-•	Commands can be dragged into the “program bar”
-•	The program bar shows the full sequence
-•	Undo and Reset options are included
+⸻
 
-Success and Reattempt Handling
-•	A success dialog appears when the goal and notes are collected
-•	A failure dialog appears when:
-•	Hitting a wall
-•	Going out of bounds
-•	Using too many moves
-•	Missing required notes
-•	Success resets the board fully
-•	Failure keeps the commands to allow reattempts
+Game Mechanics
 
-Progress Logging
+Interaction
 
-Every attempt is saved in a CSV file inside the app:
+• Drag and drop
+• Undo and Reset
+• Program bar shows final command sequence
+
+Feedback
+
+• Smooth movement animation
+• Sound for movement, success, and failure
+• Success dialog when all conditions are met
+• Failure dialog when hitting walls, missing notes, or exceeding moves
+
+Logging Attempts
+
+Every play attempt is recorded in a CSV file:
 
 attempts.csv
-
 Format:
-
 timestamp,kidId,level,game,success,moves,timeMs
 
-Parent Report (Chart)
-•	The app reads the CSV file
-•	Calculates success rate for each level
-•	Displays a bar chart using MPAndroidChart
+⸻
 
-Device Support
-•	Works in portrait and landscape
-•	Works on phones and tablets
-•	Uses layouts that scale on different screen sizes
+Parent Report
 
-How to Run
-1.	Clone the project
-2.	Open it in Android Studio
-3.	Run it on an emulator or physical device
+• Reads the CSV log
+• Calculates success rate per level
+• Displays results using MPAndroidChart
+• Includes text summaries under the chart
 
-Project Structure (Simplified)
+⸻
 
-TuneTrail/
-data/
-db/        (Room database files)
-repo/      (User repository)
-session/   (User session)
-di/
-AppGraph.kt
+Device Compatibility
+
+• Works on phones and tablets
+• Supports portrait and landscape
+• Layout scales across different screen sizes
+
+⸻
+
+How to Run the Project
+	1.	Clone the repository
+	2.	Open in Android Studio
+	3.	Run on an emulator or physical device
+
+⸻
+
+Project Files (Simplified)
+
 GameScreen.kt
 LevelConfigs.kt
 ParentHomeScreen.kt
@@ -96,18 +100,21 @@ NavGraph.kt
 LoginScreen.kt
 RegisterScreen.kt
 MainActivity.kt
+AppDatabase + DAO + Repository
+SessionStore
 
-Purpose
 
-This project demonstrates:
-•	Animation
-•	Drag and drop
-•	Audio playback
-•	SQLite usage
-•	Dialog handling
-•	Navigation
-•	File logging
-•	Third-party chart library integration
-•	Multi-device support
-•	Programmatic maze game design
+⸻
 
+What This Project Demonstrates
+
+• SQLite
+• DataStore sessions
+• Animations
+• Drag and drop
+• Audio playback
+• File logging
+• Dialogs
+• Multi-screen navigation
+• Charting library usage
+• Scalable UI design
